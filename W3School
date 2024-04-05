@@ -43,9 +43,31 @@
 
 13. SELECT * FROM Customers LIMIT 3; // Mysql
 
-13
+14. SELECT MIN(column_name) FROM table_name WHERE condition; // Minimum value of seleted column
 
+14. SELECT MAX(column_name) FROM table_name WHERE condition;
 
+14. SELECT MIN(Price) AS SmallestPrice FROM Products;
 
+15. SELECT SUM(column_name) FROM table_name WHERE condition; // Sum of numeric column
 
+16. Group BY ?????????
 
+17. SELECT AVG(column_name) FROM table_name WHERE condition; // Average of numeric column
+
+There are two wildcards often used in conjunction with the LIKE operator:
+
+ The percent sign % represents zero, one, or multiple characters
+ The underscore sign _ represents one, single character
+
+18. SELECT * FROM Customers WHERE city LIKE 'L_nd__';
+
+18. SELECT * FROM Customers WHERE city LIKE '%L%';
+
+18. SELECT * FROM Customers WHERE CustomerName LIKE '%a';
+
+18. SELECT * FROM Customers WHERE CustomerName LIKE 'b%s'; // begin 'b' finish 's'
+
+18. SELECT * FROM Customers WHERE CustomerName LIKE 'a__%'; // Return all customers that starts with "a" and are at least 3 characters in length:
+
+1
