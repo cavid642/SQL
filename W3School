@@ -27,4 +27,25 @@
 
 8. INSERT INTO Customers (CustomerName, City, Country) VALUES ('Cardinal', 'Stavanger', 'Norway'); // Insert into specified columns
 
-9. 
+9. UPDATE table_name SET column1 = value1, column2 = value2, ... WHERE condition; // The UPDATE statement is used to modify the existing records in a table.
+
+9. UPDATE Customers SET ContactName = 'Alfred Schmidt', City= 'Frankfurt' WHERE CustomerID = 1;
+
+10. DELETE FROM table_name WHERE condition; // The DELETE statement is used to delete existing records in a table.
+
+10. DELETE FROM Customers WHERE CustomerName='Alfreds Futterkiste';
+
+11. DELETE FROM table_name; // Delete all records
+
+12. DROP TABLE table_name; // Delete table
+
+13. SELECT TOP 3 * FROM Customers; // The SELECT TOP clause is used to specify the number of records to return.
+
+13. SELECT * FROM Customers LIMIT 3; // Mysql
+
+13
+
+
+
+
+
