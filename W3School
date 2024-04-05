@@ -1,0 +1,30 @@
+1. SELECT DISTINCT Country FROM Customers; // The SELECT DISTINCT statement is used to return only distinct (different) values.
+
+2. SELECT COUNT(DISTINCT Country) FROM Customers; // COUNT return the number of 
+
+3. SELECT Count(*) AS DistinctCountries FROM (SELECT DISTINCT Country FROM Customers); // Same code as 2
+
+4. SELECT * FROM Customers WHERE Country='Mexico'; // WHERE is used for filtering
+
+************************************************************************************************
+*    Operator	   Description	Example                                                        *
+*       =	             Equal	                                                       *
+*       >	          Greater than	                                                       * 
+*       <	           Less than	                                                               *     
+*       >=	    Greater than or equal	                                                         *
+*       <=	     Less than or equal	                                                           * 
+*       <>	    Not equal. Note: In some versions of SQL this operator may be written as !=	   *
+*    BETWEEN	  Between a certain range	                                                       *
+*     LIKE	    Search for a pattern	                                                         *
+*      IN	      To specify multiple possible values for a column	                             *
+************************************************************************************************
+
+5. SELECT * FROM Products ORDER BY Price; // ORDER BY keyword is used to sort the result-set in ascending or descending order. Default is ASC. For string values the ORDER BY keyword will order alphabetically
+
+6. SELECT * FROM Products ORDER BY Price DESC; // Descending order
+
+7. INSERT INTO Customers (CustomerName, ContactName, Address, City, PostalCode, Country) VALUES ('Cardinal', 'Tom B. Erichsen', 'Skagen 21', 'Stavanger', '4006', 'Norway'); // The INSERT INTO statement is used to insert new records in a table.
+
+8. INSERT INTO Customers (CustomerName, City, Country) VALUES ('Cardinal', 'Stavanger', 'Norway'); // Insert into specified columns
+
+9. 
