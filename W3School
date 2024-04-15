@@ -70,4 +70,19 @@ There are two wildcards often used in conjunction with the LIKE operator:
 
 18. SELECT * FROM Customers WHERE CustomerName LIKE 'a__%'; // Return all customers that starts with "a" and are at least 3 characters in length:
 
-1
+19. SELECT column_name(s) FROM table_name WHERE column_name IN (value1, value2, ...);
+
+19. SELECT * FROM Customers WHERE Country NOT IN ('Germany', 'France', 'UK');
+
+20.SELECT column_name(s) FROM table_name WHERE EXISTS (SELECT column_name FROM table_name WHERE condition); // The EXISTS operator is used to test for the existence of any record in a subquery.
+
+21. 
+
+
+
+
+1. CREATE DATABASE databasename;
+
+2. DROP DATABASE databasename;
+
+3. 
