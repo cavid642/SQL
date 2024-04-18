@@ -6,4 +6,75 @@
 
 -------------------------------------------------
 
-1. 
+1. CREATE DATABASE myDB; 
+2. USE myDB;
+3. CREATE TABLE customers(
+	  student_id int,
+    first_name varchar(50),
+    surname varchar(50),
+    score int
+   );
+4. SHOW TABLES;
+5. SELECT * FROM customers;
+6. RENAME TABLE customers TO students;
+7. SHOW TABLES;
+8. ALTER TABLE students ADD phone_number VARCHAR(15);
+9. SELECT * FROM students;
+10. ALTER TABLE students RENAME COLUMN phone_number TO email;
+11. ALTER TABLE students MODIFY COLUMN email VARCHAR(100);
+12. ALTER TABLE students MODIFY email VARCHAR(100) AFTER surname;
+13. ALTER TABLE students MODIFY email VARCHAR(100) FIRST;
+14. ALTER TABLE students DROP COLUMN email;
+
+-------------------------------------------------
+
+1. use mydb;
+2. SELECT * FROM students;
+3. INSERT INTO students VALUES(1, "Javid", "Maharramli", 90);
+4. INSERT INTO students VALUES(2, "Rasul", "Alakbarov", 100), (3, "Tamerlan", "Ibadov", 80), (4, "Telman", "Nurmamadli", 78);
+5. INSERT INTO students (student_id, first_name, surname) VALUES (5, "Kanan", "Muzaffarov");
+
+-------------------------------------------------
+
+1. SELECT * FROM students;
+2. SELECT first_name, surname FROM students;
+3. SELECT * FROM students WHERE student_id = 3;
+4. SELECT * FROM students WHERE first_name = "Javid";
+5. SELECT * FROM students WHERE score > 80;
+6. SELECT * FROM students WHERE student_id != 4;
+7. SELECT * FROM students WHERE score IS NULL;
+8 .SELECT * FROM students WHERE score IS NOT NULL;
+
+-------------------------------------------------
+
+1. SELECT * FROM students;
+2. UPDATE students SET score = 85 WHERE first_name = "Kanan";
+3. INSERT INTO students VALUES(6, "Nicat", "Maharramli", 95);
+4. UPDATE students SET first_name = "Ali", surname = "Khudiyev" WHERE student_id = 6;
+5. UPDATE students SET score = NULL WHERE first_name = "Ali";
+6. DELETE FROM students WHERE student_id = 6;
+
+--------------------------------------------------
+
+1. SET AUTOCOMMIT = OFF;
+2. COMMIT;
+3. SELECT * FROM students;
+4. DELETE FROM students;
+5. ROLLBACK;
+6. SELECT * FROM students;
+
+--------------------------------------------------
+
+1. CREATE TABLE test(
+	  my_date DATE,
+    my_time TIME,
+    my_datetime DATETIME
+	);
+2. INSERT INTO test VALUES(CURRENT_DATE(), CURRENT_TIME(), NOW());
+3. INSERT INTO test VALUES(CURRENT_DATE(), NULL, NOW());
+4. INSERT INTO test VALUES(CURRENT_DATE() - 1, CURRENT_TIME(), NOW());
+5. SELECT * FROM test;
+
+--------------------------------------------------
+
+ 
