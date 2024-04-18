@@ -1,0 +1,9 @@
+1. CREATE DATABASE myDB; 
+2. USE myDB;
+3. DROP DATABASE myDB;
+4. ALTER DATABASE myDB READ ONLY = 1;
+5. ALTER DATABASE myDB READ ONLY = 0;
+
+-------------------------------------------------
+
+1. 
