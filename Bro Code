@@ -77,4 +77,29 @@
 
 --------------------------------------------------
 
- 
+1. USE myDB;
+2. CREATE TABLE products(
+	product_id INT,
+    product_name VARCHAR(25),
+    price DECIMAL(4, 2)
+   );
+3. ALTER TABLE products ADD CONSTRAINT UNIQUE(product_name); // MAKE product_name column UNIQUE
+4. INSERT INTO products VALUES (100, "hamburger", 3.99), (101, "fries", 1.89), (102, "soda", 1.00), (103, "ice cream", 1.49), (104, "fries", 1.75); // DUPLICATE ERROR
+5. SELECT * FROM products;
+
+---------------------------------------------------
+
+1. CREATE TABLE team(
+	team_id INT,
+    	team_name VARCHAR(25),
+    	score DECIMAL(4, 2) NOT NULL //THIS COLUMN MUST BE NOT NULL VALUE
+   );
+2. INSERT INTO team VALUES(101, "Barselona", NULL); // SCORE CAN NOT BE NULL ERROR
+3. INSERT INTO team VALUES(101, "Barselona", 0); // NOT ERROR
+4. SELECT * FROM team;
+
+---------------------------------------------------
+
+
+
+
