@@ -83,6 +83,19 @@ There are two wildcards often used in conjunction with the LIKE operator:
 
 1. CREATE DATABASE databasename;
 
-2. DROP DATABASE databasename;
+2.BACKUP DATABASE databasename TO DISK = 'filepath';
 
-3. 
+2. BACKUP DATABASE databasename TO DISK = 'filepath' WITH DIFFERENTIAL; // A differential back up only backs up the parts of the database that have changed since the last full database backup.
+
+3. DROP DATABASE databasename;
+
+3.CREATE TABLE table_name (
+    column1 datatype,
+    column2 datatype,
+    column3 datatype,
+   ....
+  ); 
+
+4. DROP TABLE table_name;
+
+5. 
