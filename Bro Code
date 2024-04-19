@@ -1,3 +1,4 @@
+# DATABASES
 1. CREATE DATABASE myDB; 
 2. USE myDB;
 3. DROP DATABASE myDB;
@@ -6,6 +7,7 @@
 
 -------------------------------------------------
 
+#TABLES
 1. CREATE DATABASE myDB; 
 2. USE myDB;
 3. CREATE TABLE customers(
@@ -28,6 +30,7 @@
 
 -------------------------------------------------
 
+#INSERT ROWS
 1. use mydb;
 2. SELECT * FROM students;
 3. INSERT INTO students VALUES(1, "Javid", "Maharramli", 90);
@@ -36,6 +39,7 @@
 
 -------------------------------------------------
 
+#SELECT
 1. SELECT * FROM students;
 2. SELECT first_name, surname FROM students;
 3. SELECT * FROM students WHERE student_id = 3;
@@ -47,6 +51,7 @@
 
 -------------------------------------------------
 
+#UPDATE AND DELETE
 1. SELECT * FROM students;
 2. UPDATE students SET score = 85 WHERE first_name = "Kanan";
 3. INSERT INTO students VALUES(6, "Nicat", "Maharramli", 95);
@@ -56,6 +61,7 @@
 
 --------------------------------------------------
 
+#AUTOCOMMIT, COMMIT AND ROLLBACK
 1. SET AUTOCOMMIT = OFF;
 2. COMMIT;
 3. SELECT * FROM students;
@@ -65,6 +71,7 @@
 
 --------------------------------------------------
 
+#CURRENT_DATE AND CURRENT_TIME
 1. CREATE TABLE test(
 	  my_date DATE,
     my_time TIME,
@@ -77,6 +84,7 @@
 
 --------------------------------------------------
 
+#UNIQUE
 1. USE myDB;
 2. CREATE TABLE products(
 	product_id INT,
@@ -89,6 +97,7 @@
 
 ---------------------------------------------------
 
+#NOT NULL
 1. CREATE TABLE team(
 	team_id INT,
     	team_name VARCHAR(25),
@@ -100,6 +109,58 @@
 
 ---------------------------------------------------
 
+#CHECK
+1. use mydb;
+2. SET SQL_SAFE_UPDATES = 0;
 
+3. CREATE TABLE employees(
+	employee_id INT,
+	first_name VARCHAR(50),
+	last_name VARCHAR(50),
+	hourly_pay DECIMAL(5, 2),
+	hire_date DATE,
+	CONSTRAINT chk_hourly_pay CHECK (hourly_pay >= 10.00)
+    );
+4. INSERT INTO employees VALUES(100, "Anar", "Eyvazzade", 8.9, '2022-12-12'); // ERROR
+5. ALTER TABLE employees ADD CONSTRAINT chk_hire_date CHECK (hire_date > '2020-01-01');
+6. ALTER TABLE employees DROP CHECK chk_hire_date;
 
+---------------------------------------------------
 
+#DEFAULT
+1. SELECT * FROM products;
+2. INSERT INTO products VALUES (100, "hamburger", 3.99), (101, "fries", 1.89), (102, "soda", 1.00), (103, "ice cream", 1.49);
+3. INSERT INTO products VALUES (104, "straw", 0.00), (105, "napkin", 0.00), (106, "fork", 0.00), (107, "spoon", 0.00);
+4. ALTER TABLE products ALTER price SET DEFAULT 0;
+5. INSERT INTO products(product_id, product_name) VALUES (108, "cola"), (109, "fanta"), (110, "pepsi"), (111, "sprite");
+
+----------------------------------------------------
+
+#PRIMARY KEY
+1. CREATE TABLE transactions(
+	transaction_id_1 INT PRIMARY KEY,
+   	 amount DECIMAL(5, 2)
+    );
+2. ALTER TABLE transactions ADD CONSTRAINT PRIMARY KEY(amount);
+3. INSERT INTO transactions VALUES(1000, 4.99); 
+4. INSERT INTO transactions VALUES(1000, 9.99); // ERROR
+5. ALTER TABLE transactions DROP PRIMARY KEY;
+
+-----------------------------------------------------
+
+#AUTO_INCREMENT
+1. CREATE TABLE transactions(
+	transaction_id_1 INT PRIMARY KEY AUTO_INCREMENT,
+    	amount DECIMAL(5, 2)
+   );
+2. ALTER TABLE transactions AUTO_INCREMENT = 1000;
+3. INSERT INTO transactions(amount) VALUES(2.68);
+4. INSERT INTO transactions(amount) VALUES(8.67);
+5. INSERT INTO transactions(amount) VALUES(1.62);
+6. INSERT INTO transactions(amount) VALUES(2.68);
+7. SELECT * FROM transactions;
+
+-----------------------------------------------------
+
+#FOREIGN KEYS
+1. 
