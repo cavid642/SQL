@@ -163,4 +163,20 @@
 -----------------------------------------------------
 
 #FOREIGN KEYS
-1. 
+1. SET SQL_SAFE_UPDATES = 0;
+2. use mydb;
+3. CREATE TABLE customers (
+	customer_id INT PRIMARY KEY AUTO_INCREMENT,
+    first_name VARCHAR(50),
+    last_name VARCHAR(50)
+  );
+4. INSERT INTO customers (first_name, last_name) VALUES ("Fred", "Fish"), ("Larry", "Lobster"), ("Bubble", "Bass");
+5. SELECT * FROM customers;
+6. CREATE TABLE transactions(
+	transactions_id INT PRIMARY KEY AUTO_INCREMENT,
+	amount DECIMAL(5, 2),
+    	customer_id INT,
+    	FOREIGN KEY(customer_id) REFERENCES customers(customer_id)
+   );
+7. ALTER TABLE transactions DROP FOREIGN KEY  transactions_ibfk_1;
+8. ALTER TABLE transactions ADD CONSTRAINT fk_customer_id FOREIGN KEY(customer_id) REFERENCES customers(customer_id);
