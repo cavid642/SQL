@@ -180,3 +180,10 @@
    );
 7. ALTER TABLE transactions DROP FOREIGN KEY  transactions_ibfk_1;
 8. ALTER TABLE transactions ADD CONSTRAINT fk_customer_id FOREIGN KEY(customer_id) REFERENCES customers(customer_id);
+
+------------------------------------------------------
+
+#JOINS
+1. SELECT * FROM transactions INNER JOIN customers ON transactions.customer_id = customers.customer_id;
+2. SELECT * FROM transactions LEFT JOIN customers ON transactions.customer_id = customers.customer_id;
+3. SELECT * FROM transactions RIGHT JOIN customers ON transactions.customer_id = customers.customer_id;
